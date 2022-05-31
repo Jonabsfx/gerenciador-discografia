@@ -17,7 +17,8 @@ class AlbumResource extends JsonResource
         return [
           'id' => $this->id,
           'name' => ucwords(strtolower($this->name)),
-          'album' => $this->album
+          'year' => $this->year,
+          'duration' => $this->duration
         ];
     }
 }

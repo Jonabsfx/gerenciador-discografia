@@ -14,7 +14,8 @@ class Track extends Model
 
     protected $fillable = [
         'name', 
-        'duration'
+        'duration',
+        'feat'
     ];
 
     public function album()

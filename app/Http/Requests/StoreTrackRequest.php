@@ -24,7 +24,20 @@ class StoreTrackRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|unique:track,name',
+            'duration' => 'required|integer',
+            'feat' => 'nullable'
         ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Nome da faixa é obrigatória',
+            'name.unique' => 'Faixa já existe',
+            'duration.required' => 'É obrigatório informar a duração da faixa',
+            'duration.integer' => 'A duração da faixa deve ser informada em segundos e arredondada para o inteiro mais próximo'
+        ];
+        
     }
 }

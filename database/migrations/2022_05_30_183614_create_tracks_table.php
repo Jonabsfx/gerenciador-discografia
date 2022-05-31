@@ -17,6 +17,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->integer('duration');
+            $table->string('feat')->nullable();
             $table->foreignUuid('album_id')->nullable(false)->index();
             $table->timestamps();
         });

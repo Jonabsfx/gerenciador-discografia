@@ -25,7 +25,7 @@ class StoreAlbumRequest extends FormRequest
     {
         return [
             'name' => 'required|unique:albums,name',
-            'year' => 'required|year'
+            'year' => 'required|between:1900,2100'
         ];
     }
 
@@ -35,7 +35,7 @@ class StoreAlbumRequest extends FormRequest
             'name.required' => 'Nome do álbum é obrigatório',
             'name.unique' => 'Álbum já existe',
             'year.required' => 'Ano de lançamento é obrigatório',
-            'year.year' => 'O ano de lançamento deve ser válido'
+            'year.between' => 'O ano de lançamento deve ser válido. Informe um ano entre 1900 e 2100'
         ];
         
     }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->integer('year');
+            $table->integer('duration')->default(0);
             $table->timestamps();
         });
     }

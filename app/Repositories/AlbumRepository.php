@@ -48,6 +48,8 @@ class AlbumRepository
 
         $album = $album->tracks()->save($track);
 
+        $album->duration += $track->duration;
+
         return $album;
     }
 
